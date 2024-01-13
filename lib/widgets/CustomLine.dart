@@ -11,7 +11,8 @@ class CustomLine extends StatelessWidget {
     return Container(
       width: double.infinity,
       color: Colors.white,
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.only(left: 8.0),
+      margin: const EdgeInsets.only(bottom: 16.0),
       child: Text.rich(
         TextSpan(
           style: const TextStyle(
