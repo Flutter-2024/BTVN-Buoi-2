@@ -58,6 +58,17 @@ flutter:
   # the material Icons class.
   assets:
     - assets/dart.png
+    - assets/paint_your_ui.png
+    - assets/google.png
+    - assets/icon_01.png
+    - assets/icon_02.png
+    - assets/icon_03.png
+    - assets/image_01.png
+    - assets/image_02.png
+    - assets/image_03.png
+
+
+
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
