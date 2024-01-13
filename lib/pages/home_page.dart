@@ -1,4 +1,7 @@
 import 'package:dart_dev/widgets/CustomAdvantageWidget.dart';
+import 'package:dart_dev/widgets/CustomBottomMarginUsingSizedBoxWidget.dart';
+import 'package:dart_dev/widgets/CustomIconWidget.dart';
+import 'package:dart_dev/widgets/CustomRightMarginUsingSizeBoxWidget.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/CustomAdvantageDetailWidget.dart';
@@ -19,15 +22,34 @@ class _DartDevHomePageState extends State<DartDevHomePage> {
       backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
-        leading: const Icon(Icons.calendar_today),
+        leading: Image.network(
+          'https://avatars.githubusercontent.com/u/1609975?s=200&v=4',
+        ),
         title: Text(
           widget.title,
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
       endDrawer: Drawer(
+        backgroundColor: Colors.white,
         child: ListView(
-          padding: EdgeInsets.zero,
+          padding: const EdgeInsets.only(top: 32),
+          children: const [
+            ListTile(
+              title: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search',
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                  ),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
       body: SingleChildScrollView(
@@ -48,11 +70,11 @@ class _DartDevHomePageState extends State<DartDevHomePage> {
               width: double.infinity,
               color: Theme.of(context).colorScheme.secondary,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
                     'Paint your UI to life',
-                    style: Theme.of(context).textTheme.headlineLarge,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   Text(
                     'with Dart VM\'s instant hot reload',
@@ -78,12 +100,14 @@ class _DartDevHomePageState extends State<DartDevHomePage> {
                     TextSpan(
                       children: [
                         WidgetSpan(
-                          child: Padding(
-                            padding: EdgeInsets.only(right: 4.0),
-                            child: Icon(
-                              Icons.play_circle,
-                              color: Colors.blue,
-                            ),
+                          child: Icon(
+                            Icons.play_circle,
+                            color: Colors.blue,
+                          ),
+                        ),
+                        WidgetSpan(
+                          child: CustomRightMarginUsingSizedBoxWidget(
+                            margin: 8,
                           ),
                         ),
                         TextSpan(
@@ -131,9 +155,14 @@ class _DartDevHomePageState extends State<DartDevHomePage> {
                           ),
                         ),
                         WidgetSpan(
-                          child: Icon(
-                            Icons.favorite,
-                            color: Color(0xFF818487),
+                          child: CustomRightMarginUsingSizedBoxWidget(
+                            margin: 8,
+                          ),
+                        ),
+                        WidgetSpan(
+                          child: CustomIconWidget(
+                            url: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-icon.png',
+                            heightImage: 20,
                           ),
                         ),
                       ],
@@ -143,7 +172,7 @@ class _DartDevHomePageState extends State<DartDevHomePage> {
               ),
             ),
             const Divider(
-              color: Colors.black,
+              color: Colors.grey,
             ),
             Container(
               width: double.infinity,
@@ -200,16 +229,19 @@ class _DartDevHomePageState extends State<DartDevHomePage> {
             Container(
               padding: const EdgeInsets.all(32.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text.rich(
                     TextSpan(
                       children: [
-                        const WidgetSpan(
-                          child: Icon(
-                            Icons.favorite,
-                            color: Color(0xFF818487),
+                        WidgetSpan(
+                          child: Image.network(
+                            'https://avatars.githubusercontent.com/u/1609975?s=200&v=4',
+                            fit: BoxFit.cover,
+                            height: 48,
                           ),
+                        ),
+                        const WidgetSpan(
+                          child: CustomRightMarginUsingSizedBoxWidget(),
                         ),
                         TextSpan(
                           text: 'Dart',
@@ -222,21 +254,24 @@ class _DartDevHomePageState extends State<DartDevHomePage> {
                     TextSpan(
                       children: [
                         WidgetSpan(
-                          child: Icon(
-                            Icons.favorite,
-                            color: Color(0xFF818487),
+                          child: CustomIconWidget(
+                            url: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/medium-icon.png',
                           ),
                         ),
                         WidgetSpan(
-                          child: Icon(
-                            Icons.favorite,
-                            color: Color(0xFF818487),
+                          child: CustomRightMarginUsingSizedBoxWidget(),
+                        ),
+                        WidgetSpan(
+                          child: CustomIconWidget(
+                            url: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-icon.png',
                           ),
                         ),
                         WidgetSpan(
-                          child: Icon(
-                            Icons.favorite,
-                            color: Color(0xFF818487),
+                          child: CustomRightMarginUsingSizedBoxWidget(),
+                        ),
+                        WidgetSpan(
+                          child: CustomIconWidget(
+                            url: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-black-icon.png',
                           ),
                         ),
                       ],
@@ -258,9 +293,7 @@ class _DartDevHomePageState extends State<DartDevHomePage> {
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
-                  const SizedBox(
-                    height: 16.0,
-                  ),
+                  const CustomBottomMarginUsingSizedBoxWidget(),
                   Text.rich(
                     TextSpan(
                       style: Theme.of(context).textTheme.bodySmall,
@@ -269,15 +302,13 @@ class _DartDevHomePageState extends State<DartDevHomePage> {
                           text: 'Terms',
                         ),
                         WidgetSpan(
-                          child: SizedBox(
-                              width: 16.0), // Add padding between 'Terms' and 'Privacy'
+                          child: CustomRightMarginUsingSizedBoxWidget(),
                         ),
                         TextSpan(
                           text: 'Privacy',
                         ),
                         WidgetSpan(
-                          child: SizedBox(
-                              width: 16.0), // Add padding between 'Terms' and 'Privacy'
+                          child: CustomRightMarginUsingSizedBoxWidget(),
                         ),
                         TextSpan(
                           text: 'Security',

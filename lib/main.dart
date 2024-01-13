@@ -32,8 +32,12 @@ class DartDevApp extends StatelessWidget {
             fontSize: 20,
             color: Colors.white,
           ),
-          headlineLarge: TextStyle(
+          headlineMedium: TextStyle(
             fontSize: 32,
+            color: Colors.white,
+          ),
+          headlineLarge: TextStyle(
+            fontSize: 48,
             color: Colors.white,
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:dart_dev/widgets/CustomBottomMarginUsingSizedBoxWidget.dart';
 import 'package:flutter/material.dart';
 
 class CustomAdvantageWidget extends StatelessWidget {
@@ -26,11 +27,13 @@ class CustomAdvantageWidget extends StatelessWidget {
               color: const Color(0xFF9dc0d3),
             ),
           ),
+          const CustomBottomMarginUsingSizedBoxWidget(),
           Text(
             headerText,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headlineLarge,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
+          const CustomBottomMarginUsingSizedBoxWidget(),
           Text(
             descriptionText,
             textAlign: TextAlign.center,

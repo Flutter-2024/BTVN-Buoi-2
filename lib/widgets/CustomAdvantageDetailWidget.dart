@@ -1,5 +1,7 @@
+import 'package:dart_dev/widgets/CustomRightMarginUsingSizeBoxWidget.dart';
 import 'package:flutter/material.dart';
 
+import 'package:dart_dev/widgets/CustomBottomMarginUsingSizedBoxWidget.dart';
 import 'CustomLine.dart';
 
 class CustomAdvantageDetailWidget extends StatelessWidget {
@@ -18,20 +20,15 @@ class CustomAdvantageDetailWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       color: Colors.white,
-      padding: const EdgeInsets.all(32.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 200,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              color: Colors.blue,
-              shape: BoxShape.rectangle,
-            ),
+          Image.network(
+            'https://dartcode.org/images/release_notes/v3.1/ui_guides.png',
+            fit: BoxFit.cover,
           ),
           Container(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.all(32.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -53,6 +50,9 @@ class CustomAdvantageDetailWidget extends StatelessWidget {
                     fontSize: 30,
                     color: Colors.black,
                   ),
+                ),
+                const CustomBottomMarginUsingSizedBoxWidget(
+                  margin: 24,
                 ),
                 Column(
                   children: descriptionText.map((text) {
