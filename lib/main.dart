@@ -1,4 +1,5 @@
 import 'package:btvn_buoi_2/widget/drawer_widget.dart';
+import 'package:btvn_buoi_2/widget/screen_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,27 +29,13 @@ class MyApp extends StatelessWidget{
               )
             ],
           ),
-          //body:
+          body: const MyScreen()
         ),
       ),
     );
   }
 }
 
-// class MyApp extends StatefulWidget{
-//   const MyApp({super.key});
-//
-//   @override
-//   State<StatefulWidget> createState() {
-//     return MyAppState();
-//   }
-// }
-// class MyAppState extends State<MyApp>{
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Center();
-//   }
-// }
 
 
 
