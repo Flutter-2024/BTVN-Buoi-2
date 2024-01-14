@@ -590,11 +590,14 @@ class MyScreenState extends State<MyScreen> {
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text("Terms",
                       style: TextStyle(color: Colors.white, fontSize: 16)),
+                  SizedBox(width: 10,),
                   Text("Privacy",
                       style: TextStyle(color: Colors.white, fontSize: 16)),
+                  SizedBox(width: 10,),
                   Text("Security",
                       style: TextStyle(color: Colors.white, fontSize: 16))
                 ],
