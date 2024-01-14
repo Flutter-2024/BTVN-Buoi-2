@@ -57,6 +57,11 @@ flutter:
     - assets/intro_dart.gif
     - assets/supported_by_google.png
     - assets/icon_github.png
+    - assets/icon_approachable.png
+    - assets/icon_productive.png
+    - assets/icon_portable.png
+    - assets/weather.png
+    - assets/icon_end_page.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

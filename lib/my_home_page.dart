@@ -11,7 +11,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff0b1d28),
+      backgroundColor: const Color(0xff121a26),
       appBar: _appBar(),
       endDrawer: _endDrawer(),
       body: _body(),
@@ -111,6 +111,289 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ]),
           ),
+          Container(
+            color: const Color(0xff050f18),
+            padding: const EdgeInsets.all(40),
+            child: const Column(
+              children: [
+                Image(
+                  image: AssetImage("assets/icon_approachable.png"),
+                  width: 80,
+                  height: 80,
+                ),
+                SizedBox(height: 15,),
+                Text(
+                  'Approachable',
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.white,
+                  ),
+                ),
+                SizedBox(height: 15,),
+                Text(
+                  'Develop with a consistent, concise, and strongly typed programming language that offers modern features like null safety and pattern matching.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey,
+                  ),
+                ),
+                SizedBox(height: 30,),
+                Image(image: AssetImage("assets/icon_productive.png"),
+                  width: 80,
+                  height: 80,
+                ),
+                SizedBox(height: 15,),
+                Text(
+                  'Productive development',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(height: 15,),
+                Text(
+                  'Make changes iteratively: use hot reload to see the result instantly in your running app.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey,
+                  ),
+                ),
+                SizedBox(height: 30,),
+                Image(image: AssetImage("assets/icon_portable.png"),
+                  width: 80,
+                  height: 80,
+                ),
+                SizedBox(height: 15,),
+                Text(
+                  'Portable and fast on all platforms',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 15,),
+                Text(
+                  'Compile to ARM, x64, and RISC-V machine code for mobile, desktop, and backend. Or, compile to JavaScript & WebAssembly for the web.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey,
+                  ),
+                  softWrap: true,
+                ),
+              ],
+            ),
+          ),
+          const Image(
+            image: AssetImage("assets/weather.png"),
+          ),
+          Container(
+            padding: const EdgeInsets.all(40),
+            color:  const Color(0xffffffff),
+            child:  Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Image(image: AssetImage("assets/icon_approachable.png"),
+                  width: 80,
+                  height: 80,
+                ),
+                const SizedBox(height: 10,),
+                const Text('Approachable',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.black,
+                  ),
+                ),
+                const SizedBox(height: 20,),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 30,
+                      child: VerticalDivider(
+                        color: Colors.blueAccent,
+                        thickness: 7,
+                      ),
+                    ),
+                    const SizedBox(width: 10,),
+                    Expanded(
+                        child: RichText(
+                          text: const TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Mature and complete ',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.blue,
+                                ),
+                              ),
+                              TextSpan(
+                                text: 'async-await',
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  fontSize: 16,
+                                  color: Colors.blue,
+                                ),
+                              ),
+                              TextSpan(
+                                text: ' for user interfaces containing event-driven code, paired with ',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.blue,
+                                ),
+                              ),
+                              TextSpan(
+                                text: 'isolate-based concurrency.',
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  fontSize: 16,
+                                  color: Colors.blue,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                    ),
+
+                  ],
+                ),
+                const SizedBox(height: 10,),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 15,
+                      child: VerticalDivider(
+                        color: Colors.black,
+                        thickness: 7,
+                      ),
+                    ),
+                    const SizedBox(width: 10,),
+                    Expanded(
+                      child: RichText(
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: 'Write safe and concise code using features like ',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'sound null safety, collection if',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
+                            ),
+                            TextSpan(
+                              text: ', and ',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'pattern matching.',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10,),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 15,
+                      child: VerticalDivider(
+                        color: Colors.black,
+                        thickness: 7,
+                      ),
+                    ),
+                    const SizedBox(width: 10,),
+                    Expanded(
+                      child: RichText(
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: 'A consistent programming language, with an easy to learn and ',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'familiar syntax.',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            color: const Color(0xff1c2834),
+            padding: const EdgeInsets.all(40),
+               child: const Column(
+                 crossAxisAlignment: CrossAxisAlignment.center,
+                 children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image(image: AssetImage("assets/logo_dart.png"),
+                          width: 60,
+                          height: 60,
+                        ),
+                        SizedBox(width: 20,),
+                        Text('Dart', style: TextStyle(fontSize: 50, color: Colors.white),),
+                      ],
+                    ),
+                   Image(image: AssetImage("assets/icon_end_page.png"),
+                     width: 150,
+                     height: 80,
+                   ),
+                   Divider(color: Colors.grey,),
+                   Text(
+                     'Except as otherwise noted, this site is licensed under a Creative Commons Attribution 4.0 International License, and code samples are licensed under the 3-Clause BSD License.',
+                     style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      ),
+                     textAlign: TextAlign.center,
+                     ),
+                    SizedBox(height: 20,),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                     children: [
+                       Text('Terms', style: TextStyle(fontSize: 16, color: Colors.grey),),
+                       Text('Privacy', style: TextStyle(fontSize: 16, color: Colors.grey),),
+                       Text('Security', style: TextStyle(fontSize: 16, color: Colors.grey),),
+                     ],
+                   )
+                 ],
+               ),
+          ),
         ],
       );
 
@@ -118,7 +401,7 @@ class _MyHomePageState extends State<MyHomePage> {
         iconTheme: const IconThemeData(
           color: Colors.white, // Set color for the icon button
         ),
-        backgroundColor: const Color(0xff074264),
+        backgroundColor: const Color(0xff1c2834),
         leading: Image.asset(
           "assets/logo_dart.png",
           width: 50,
