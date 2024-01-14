@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MyDrawer extends StatelessWidget{
+class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
 
   @override
@@ -12,25 +11,71 @@ class MyDrawer extends StatelessWidget{
           buildSearchField(),
           const Divider(height: 3, color: Colors.black),
           const SizedBox(height: 20),
-          buildMenuItem(text: "Overview"),
+          buildMenuItem(text: "Overview", size: 28),
           const SizedBox(height: 20),
-          buildMenuItem(text: "Community"),
+          buildMenuItem(text: "Community", size: 28),
           const SizedBox(height: 20),
-          buildMenuItem(text: "Try Dart"),
+          buildMenuItem(text: "Try Dart", size: 28),
           const SizedBox(height: 20),
-          buildMenuItem(text: "Get Dart"),
+          buildMenuItem(text: "Get Dart", size: 28),
           const SizedBox(height: 20),
-          buildMenuItem(text: "Docs"),
+          buildMenuItem(text: "Docs", size: 28),
+          const SizedBox(
+            height: 20,
+          ),
+          Theme(
+            data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+            child: ExpansionTile(
+              childrenPadding: const EdgeInsets.symmetric(vertical: 0),
+              title: const Text(
+                "Tutorials & codelabs",
+                style: TextStyle(fontSize: 20),
+              ),
+              children: [
+                buildMenuItem(text: "Tutorials", size: 16),
+                buildMenuItem(text: "Codelabs", size: 16)
+              ],
+            ),
+          ),
+          Theme(
+            data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+            child: ExpansionTile(
+              childrenPadding: const EdgeInsets.symmetric(vertical: 0),
+              title: const Text(
+                "Language",
+                style: TextStyle(fontSize: 20),
+              ),
+              children: [
+                buildMenuItem(text: "Introduction", size: 16),
+                buildMenuItem(text: "Syntax basics", size: 16)
+              ],
+            ),
+          ),
+          Theme(
+            data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+            child: ExpansionTile(
+              childrenPadding: const EdgeInsets.symmetric(vertical: 0),
+              title: const Text(
+                "Effective Dart",
+                style: TextStyle(fontSize: 20),
+              ),
+              children: [
+                buildMenuItem(text: "Overview", size: 16),
+                buildMenuItem(text: "Style", size: 16)
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
 Widget buildSearchField() {
   const color = Colors.black;
 
   return const TextField(
-    style: TextStyle(fontSize: 24,color: color),
+    style: TextStyle(fontSize: 24, color: color),
     decoration: InputDecoration(
       contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       hintText: 'Search',
@@ -38,11 +83,13 @@ Widget buildSearchField() {
     ),
   );
 }
-Widget buildMenuItem({required text}){
+
+Widget buildMenuItem({required text, required double size}) {
   return ListTile(
-    title: Text(text,
-      style: const TextStyle(fontSize: 28),
+    title: Text(
+      text,
+      style: TextStyle(fontSize: size),
     ),
-    onTap: (){},
+    onTap: () {},
   );
 }
