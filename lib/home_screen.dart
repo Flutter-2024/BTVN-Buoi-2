@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:trunglq/body/header_body.dart';
+import 'package:trunglq/data.dart';
+import 'package:trunglq/drawer/header_drawer.dart';
+import 'package:trunglq/drawer/title_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -54,20 +58,20 @@ class HomeScreen extends StatelessWidget {
   Widget _drawer() {
     return Drawer(
       child: ListView(
-        children: <Widget>[
+        children: [
           Container(
             padding: const EdgeInsets.all(12.0),
             child: const TextField(
               decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.search,
-                    color: Colors.grey,
-                  ),
-                  hintText: "Search",
-                  hintStyle: TextStyle(
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.grey,
+                ),
+                hintText: "Search",
+                hintStyle: TextStyle(
                     fontSize: 20
-                  ),
-                  border: InputBorder.none
+                ),
+                border: InputBorder.none
               ),
             ),
           ),
@@ -75,48 +79,9 @@ class HomeScreen extends StatelessWidget {
             height: 1,
             color: Colors.grey,
           ),
-          _itemHeaderFirstDrawer("Overview"),
-          _itemHeaderFirstDrawer("Community"),
-          _itemHeaderFirstDrawer("Try Dart"),
-          _itemHeaderFirstDrawer("Get Dart"),
-          _itemHeaderFirstDrawer("Docs"),
-
-          _itemHeaderSecondDrawer("Tutorials & codelabs"),
-          _itemHeaderSecondDrawer("Language"),
-          _itemHeaderSecondDrawer("Effective Dart"),
-          _itemHeaderSecondDrawer("Code libraries"),
-          _itemHeaderSecondDrawer("Packages"),
-          _itemHeaderSecondDrawer("Development"),
-          _itemHeaderSecondDrawer("Interoperability"),
-          _itemHeaderSecondDrawer("Tool & techniques"),
-          _itemHeaderSecondDrawer("Resources"),
-          _itemHeaderSecondDrawer("Related sites"),
+          HeaderDrawer(listHeader: Data().listHeaderDrawer),
+          TitleDrawer(listTitle: Data().listTitleDrawer)
         ],
-      ),
-    );
-  }
-
-  Widget _itemHeaderFirstDrawer(String text) {
-    return ListTile(
-      title: Text(
-        text,
-        style: const TextStyle(
-            fontSize: 22.0,
-            fontWeight: FontWeight.w500
-        ),
-      ),
-    );
-  }
-
-  Widget _itemHeaderSecondDrawer(String text) {
-    return ListTile(
-      trailing: const Icon(Icons.expand_more),
-      title: Text(
-        text,
-        style: const TextStyle(
-            fontSize: 18.0,
-            fontWeight: FontWeight.w400
-        ),
       ),
     );
   }
@@ -128,7 +93,7 @@ class HomeScreen extends StatelessWidget {
           _introduction(),
           _imageIntroduction(),
           _titleBody(),
-          _listViewHeader(),
+          HeaderBody(listHeader: Data().listHeaderBody),
           _listViewContent(),
           _footer(),
         ],
@@ -242,68 +207,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       )
-    );
-  }
-
-  Widget _listViewHeader() {
-    return ListView(
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      children: [
-        _itemListViewHeader(
-            'assets/icon_01.png',
-            "Approachable",
-            "Develop with a consistent, concise, and strongly typed programming "
-                "language that offers modern features like null safety and pattern matching."
-        ),
-        _itemListViewHeader(
-            'assets/icon_02.png',
-            "Productive",
-            "Make changes iteratively: use hot reload to see the result instantly in your running app."
-        ),
-        _itemListViewHeader(
-            'assets/icon_03.png',
-            "Portable and fast\non all platforms",
-            "Compile to ARM, x64, and RISC-V machine code for mobile, desktop, and backend. "
-                "Or, compile to JavaScript & WebAssembly for the web."
-        ),
-      ],
-    );
-  }
-
-  Widget _itemListViewHeader(String icon, String title, String content) {
-    return Container(
-      color: const Color(0xFF0d1520),
-      padding: const EdgeInsets.all(32.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.asset(
-            icon,
-            height: 80,
-            width: 80,
-          ),
-          const SizedBox(height: 24.0),
-          Text(
-            title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 24.0),
-          Text(
-            content,
-            style: const TextStyle(
-              color: Colors.white70,
-              fontSize: 18,
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
     );
   }
 
