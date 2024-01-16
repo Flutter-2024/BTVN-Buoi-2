@@ -1,5 +1,5 @@
-import 'package:trunglq/model/header.dart';
-import 'package:trunglq/model/title.dart';
+import 'package:trunglq/model/header_text.dart';
+import 'package:trunglq/model/title_text.dart';
 
 class Data {
   List<String> listHeaderDrawer = ["Overview", "Community", "Try Dart", "Get Dart", "Docs"];
@@ -7,16 +7,16 @@ class Data {
   List<String> listTitleDrawer = ["Tutorials & codelabs", "Language", "Effective Dart", "Code libraries", "Packages",
                                     "Development", "Interoperability", "Tool & techniques", "Resources", "Related sites"];
 
-  List<Header> listHeaderBody = [
-    Header(image: 'assets/icon_01.png', name: 'Approachable', content: 'Develop with a consistent, concise, and strongly typed programming '
+  List<HeaderText> listHeaderBody = [
+    HeaderText(image: 'assets/icon_01.png', name: 'Approachable', content: 'Develop with a consistent, concise, and strongly typed programming '
         'language that offers modern features like null safety and pattern matching.'),
-    Header(image: 'assets/icon_02.png', name: 'Productive', content: 'Make changes iteratively: use hot reload to see the result instantly in your running app.'),
-    Header(image: 'assets/icon_03.png', name: 'Portable and fast\non all platforms', content: 'Compile to ARM, x64, and RISC-V machine code for mobile, desktop, and backend. '
+    HeaderText(image: 'assets/icon_02.png', name: 'Productive', content: 'Make changes iteratively: use hot reload to see the result instantly in your running app.'),
+    HeaderText(image: 'assets/icon_03.png', name: 'Portable and fast\non all platforms', content: 'Compile to ARM, x64, and RISC-V machine code for mobile, desktop, and backend. '
         'Or, compile to JavaScript & WebAssembly for the web.'),
   ];
 
-  List<Title> listTitleBody = [
-    Title(
+  List<TitleText> listTitleBody = [
+    TitleText(
         image: 'assets/image_01.png',
         icon: 'assets/icon_01.png',
         name: 'Approachable',
@@ -26,7 +26,7 @@ class Data {
           "A consistent programming language, with an easy to learn and familiar syntax."
         ],
     ),
-    Title(
+    TitleText(
         image: 'assets/image_02.png',
         icon: 'assets/icon_02.png',
         name: 'Productive',
@@ -36,9 +36,9 @@ class Data {
           "Do profiling, logging, and debugging with your code editor of choice."
         ],
     ),
-    Title(
-        image: 'assets/image_02.png',
-        icon: 'assets/icon_02.png',
+    TitleText(
+        image: 'assets/image_03.png',
+        icon: 'assets/icon_03.png',
         name: 'Portable and fast\non all platforms',
         content: [
           "AOT-compile apps to native machine code for instant startup",

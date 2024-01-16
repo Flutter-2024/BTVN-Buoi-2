@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trunglq/body/header_body.dart';
+import 'package:trunglq/body/title_body.dart';
 import 'package:trunglq/data.dart';
 import 'package:trunglq/drawer/header_drawer.dart';
 import 'package:trunglq/drawer/title_drawer.dart';
@@ -94,7 +95,7 @@ class HomeScreen extends StatelessWidget {
           _imageIntroduction(),
           _titleBody(),
           HeaderBody(listHeader: Data().listHeaderBody),
-          _listViewContent(),
+          TitleBody(listTitle: Data().listTitleBody),
           _footer(),
         ],
       ),
@@ -207,110 +208,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       )
-    );
-  }
-
-  Widget _listViewContent() {
-    return ListView(
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      children: [
-        _itemListViewContent(
-            'assets/image_01.png',
-            'assets/icon_01.png',
-            "Approachable",
-            [
-              "Mature and complete async-await for user interfaces containing event-driven code, paired with isolate-based concurrency.",
-              "Write safe and concise code using features like sound null safety, collection if, and pattern matching.",
-              "A consistent programming language, with an easy to learn and familiar syntax."
-            ]
-        ),
-        _itemListViewContent(
-            'assets/image_02.png',
-            'assets/icon_02.png',
-            "Productive",
-            [
-              "Make changes to your source code iteratively, using hot reload to instantly see the effect in the running app.",
-              "Write code using a flexible type system with rich static analysis and powerful, configurable tooling.",
-              "Do profiling, logging, and debugging with your code editor of choice."
-            ]
-        ),
-        _itemListViewContent(
-            'assets/image_03.png',
-            'assets/icon_03.png',
-            "Portable and fast\non all platforms",
-            [
-              "AOT-compile apps to native machine code for instant startup",
-              "Target the web with complete, mature, fast compilers for JavaScript and WebAssembly.",
-              "Run backend code supporting your app, written using a single programming language."
-            ]
-        ),
-      ],
-    );
-  }
-
-  Widget _itemListViewContent(String image, String icon, String title, List<String> listContent) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Image.asset(
-          image,
-        ),
-        const SizedBox(height: 24.0),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0),
-          child: Image.asset(
-            icon,
-            height: 80,
-            width: 80,
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 8.0, bottom: 24.0),
-          padding: const EdgeInsets.symmetric(horizontal: 32.0),
-          child: Text(
-            title,
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 24,
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ),
-        _itemContent(listContent[0]),
-        _itemContent(listContent[1]),
-        _itemContent(listContent[2]),
-        const SizedBox(height: 24.0,),
-      ],
-    );
-  }
-
-  Widget _itemContent(String content) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const Icon(
-            Icons.turned_in,
-            color: Colors.black,
-          ),
-          const SizedBox(width: 12,),
-          Expanded(
-            child: Text(
-              content,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-              ),
-              textAlign: TextAlign.start,
-            ),
-          )
-        ],
-      ),
     );
   }
 

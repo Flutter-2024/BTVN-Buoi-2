@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:trunglq/model/header.dart';
+import 'package:trunglq/model/header_text.dart';
 
 class HeaderBody extends StatelessWidget {
   const HeaderBody({super.key, required this.listHeader});
 
-  final List<Header> listHeader;
+  final List<HeaderText> listHeader;
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
@@ -23,7 +23,7 @@ class HeaderBody extends StatelessWidget {
     );
   }
 
-  Widget _itemHeader(Header header) {
+  Widget _itemHeader(HeaderText header) {
     return Container(
       color: const Color(0xFF0d1520),
       padding: const EdgeInsets.all(32.0),
